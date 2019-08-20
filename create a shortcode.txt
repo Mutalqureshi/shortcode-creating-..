@@ -1,0 +1,14 @@
+add_shortcode("subscribe","subscribe_sec");
+function subscribe_sec()
+{
+    global $fdata;
+                $html .='<div class="Subscribe-section">';        
+                    if($fdata['subs_head']){
+                            $html .='<h2 class="sub-title">'.$fdata['subs_head'].'</h2>';
+                        }
+                        else{
+                            $html .='<h2 class="sub-title">Subscribe Section</h2>';
+                    }    
+                $html .='</div>';
+    return $html;
+}
