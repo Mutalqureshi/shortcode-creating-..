@@ -12,3 +12,56 @@ function subscribe_sec()
                 $html .='</div>';
     return $html;
 }
+
+
+
+
+all  short code
+
+
+<?php
+
+/* WP Shortcode */
+add_shortcode("site-url", "getCustomSU");
+function getCustomSU() 
+{
+	return esc_url( get_site_url() );
+}
+
+add_shortcode("wp-url", "getCustomWU");
+function getCustomWU() 
+{
+	return esc_url( get_bloginfo('wpurl') );
+}
+
+add_shortcode("theme-url", "getCustomTU");
+function getCustomTU() 
+{
+	return esc_url( get_bloginfo('stylesheet_directory') ); //template_url
+}
+
+add_shortcode("login-url", "getCustomLU");
+function getCustomLU() 
+{
+	return esc_url( wp_login_url() );
+}
+
+add_shortcode("site-title", "getCustomST");
+function getCustomST() 
+{
+	return ( get_bloginfo('name') );
+}
+
+add_shortcode("site-tagline", "getCustomSD");
+function getCustomSD() 
+{
+	return ( get_bloginfo('description') );
+}
+
+add_shortcode("current-year","getCustomCY");
+function getCustomCY() 
+{
+	return date('Y');
+}
+
+
