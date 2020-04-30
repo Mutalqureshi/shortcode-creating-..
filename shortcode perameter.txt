@@ -1,0 +1,22 @@
+function adoptable($atts) 
+{
+    $line = ( !empty($atts['line']) && is_numeric($atts['line'])    ?   $atts['line']   :   5);
+    // $atts = shortcode_atts( array(
+    //         'line' => ''
+    //     ), $atts );
+    // array( sanitize_title( $atts['line'] ) )
+  $loop = new WP_Query( array(
+        'post_type' => 'avada_portfolio',
+        'posts_per_page' => $line,
+        'tax_query' =>array(
+                  array(
+                    'taxonomy'         => 'portfolio_category',
+                    'terms'            => '16',
+                    'field'            => 'adoptable',
+                  ),
+                ),
+        // 'order' => 'ASC',
+    ) 
+);
+
+[shortcode line="10"]
